@@ -15,6 +15,7 @@ int main() {
         std::cout << "Less than 5";
     else if (i > 5 && i < 10)
          std::cout << "Greater of equal than 5, but less than 10";
+    else if
     else std::cout << "Greater of equal than 10";
     
     std::cout << std::endl;    

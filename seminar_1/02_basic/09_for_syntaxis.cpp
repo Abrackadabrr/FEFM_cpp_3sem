@@ -7,7 +7,7 @@ int main() {
     }
     int a = 0;
     int b = 1;
-    for (i = 0; i < N; i++)
+    for (int i = 0; i < N; i++)
     { //среднестатистический цикл for
         a += b + c;
         b *= i + c;
