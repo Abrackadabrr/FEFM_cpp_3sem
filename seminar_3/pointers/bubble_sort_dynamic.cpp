@@ -1,21 +1,12 @@
 ﻿#include <iostream>
 
-int main()
+int main(int argc, char ** argv)
 {
-	const unsigned size = 10;
-
-	int a[size];
-
-	std::size_t n;
+	int n;
 
 	std::cin >> n;
 
-	if (n > size)
-	{
-		std::cerr << "Too many elements.\n";
-
-		return 0;
-	}
+	int * a = new int[n];
 
 	for (std::size_t i = 0; i < n; ++i)
 	{
@@ -40,6 +31,8 @@ int main()
 	{
 		std::cout << a[i] << ' ';
 	}
-	
+
+	delete[] a;
+
 	return 0;
 }

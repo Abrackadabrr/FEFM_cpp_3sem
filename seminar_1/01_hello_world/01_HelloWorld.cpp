@@ -1,15 +1,15 @@
 #include <iostream>
 
-using std::cout;
-using std::endl;
+//using std::cout;
+//using std::endl;
 /* using namespace::name_of_something -- это аналог 
    from namespace import name_of_something */
 
-// using namespace std;
+//using namespace std;
 // using namespace -- аналог from namespace import * 
 
 int main() {
-    cout << "Hello World!" << endl;
+    std::cout << "Hello World!" << std::endl;
     
     /* std::cost << 
     "Hello World!" << std::endl; 
