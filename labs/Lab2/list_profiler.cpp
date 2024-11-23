@@ -2,9 +2,9 @@
 #include <random>
 #include <chrono>
 
+// код здесь
 
-
-using list = subforwardlist<double>;
+using list = subforwardlist<int>;
 using std::cout;
 using std::endl;
 double get_time()
