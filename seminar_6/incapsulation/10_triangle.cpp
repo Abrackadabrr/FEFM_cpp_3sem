@@ -16,7 +16,7 @@ struct Triangle {
 	pts[2] = p3;
   }
 
-  double square() const{
+  double square() const {
     double sq = pts[0].x * (pts[1].y - pts[2].y) +
                 pts[1].x * (pts[2].y - pts[0].y) +
                 pts[2].x * (pts[0].y - pts[1].y);

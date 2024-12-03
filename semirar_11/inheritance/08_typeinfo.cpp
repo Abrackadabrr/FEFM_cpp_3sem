@@ -5,7 +5,7 @@
 struct Base1 {
     int a;
     Base1(int a_): a(a_) {}; 
-    // virtual std::string name() {return " ";}
+    virtual ~Base1() {}
 };
 
 struct Derived1 : virtual Base1 {
@@ -35,7 +35,7 @@ int main() {
     }
     std::cout << typeid(*base_p).name() << std::endl;
 
-    // std::cout << typeid(base_p).name() << std::endl;
+    std::cout << typeid(base_p).name() << std::endl;
 }
 
 // typeid берет тип или lvalue-выражение и 
@@ -44,5 +44,4 @@ int main() {
 //виртуальная функция, 
 // иначе будет отпределён статический тип
 
-// 
 

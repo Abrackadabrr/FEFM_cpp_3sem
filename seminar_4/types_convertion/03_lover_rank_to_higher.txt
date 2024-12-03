@@ -1,0 +1,7 @@
+Без потери данных происходит концертация в сторону стрелочек, 
+обратно происходит с потерей
+
+bool --> char --> short int --> int --> 
+unsigned int --> long --> unsigned long --> 
+long long --> float --> double --> long double
+

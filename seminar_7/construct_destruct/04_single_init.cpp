@@ -11,6 +11,7 @@ struct myInt {
 	// перегружаем констуктор здесь
 	// direct init
 	myInt(int value) {
+		a = value;
 		std::cout << "direct" << std::endl;
 	}
 };
@@ -19,9 +20,7 @@ struct Node {
 	myInt value_;
 	Node * next_;
 
-	Node(int a): value_(a) {
-		next_ = nullptr;
-	};
+	Node(int a): value_(a), next_(nullptr) {};
 	// в круглых скобочках указываем какое значение нужно передать полю, 
 	// иначе оно будет defaut проинициализировано,
 	// а это займет лишние машинные ресурсы, которые не хочется тратить

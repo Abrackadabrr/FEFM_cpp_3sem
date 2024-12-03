@@ -1,16 +1,17 @@
 #include <iostream>
 
 struct myInt {
-	int a_ = 0;
+	int a_ = 1;
 	int b_ = 0;
-	int c_ = 0;
+	int c_ = 3;
 	int d_ = 0;
+	
+	myInt() {};
 
-	myInt(int a) {
+	myInt(int a): /* a_(1), b_(0), c_(3), d_(0) */ {
 		a_ = a > 0 ? a : 0;
 		std::cout << "direct_1" << std::endl;
 	}
-
 	
 	myInt(int a, int b): myInt(a) {
 		b_ = b;

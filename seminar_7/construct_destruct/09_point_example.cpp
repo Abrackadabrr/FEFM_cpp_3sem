@@ -16,3 +16,8 @@ struct Point2D {
 // то в соотвествующих функциях они и будут вызваны
 
 // ещё раз: это все генерирует компилятор
+
+int main() {
+	Point2D p1{}; // default init
+	Point2D p2{p1}; // copy ctor
+}

@@ -20,7 +20,7 @@ struct Node {
 	myInt value_;
 	Node * next_;
 
-	Node(int a) {
+	Node(int a) /* : value_(), next_() */ {
 		value_ = a;  // copy init 
 	}
 };

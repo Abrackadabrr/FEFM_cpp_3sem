@@ -1,3 +1,4 @@
+#include <iostream>
 struct stack {
 	int size;
 	int *a;
@@ -20,4 +21,10 @@ struct stack {
 		delete[] a;
 		std::cout << "Dtor" << std::endl;
 	}
+};
+
+int main() {
+	stack s{100};
+	s.top = 4;
+	std::cout << "hey" << std::endl;
 }

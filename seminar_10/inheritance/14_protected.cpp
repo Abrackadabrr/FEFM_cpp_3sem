@@ -10,7 +10,7 @@ protected:
     int n_elems() {return row * col;};
 };
 
-struct DiagonalMatrix: private Matrix {
+struct DiagonalMatrix: public Matrix {
     // something interesting
 
 public:
@@ -26,14 +26,14 @@ public:
 
 int main() {
     Matrix m{};
-    // d.n_elems();  // ошибка: нет доступа извне
-    // d.row = 3;
-    // d.col = 3;
+    // m.n_elems();  // ошибка: нет доступа извне
+    // m.row = 3;
+    // m.col = 3;
 
     DiagonalMatrix d{};
     d.n_elems_wrapper();
-    // d.n_elems();  // ошибка: нет доступа извне
-    // d.row = 3;
+    d.n_elems();  // ошибка: нет доступа извне
+    d.row = 3;
     // d.col = 3;  
 }
 

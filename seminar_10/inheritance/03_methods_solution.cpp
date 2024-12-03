@@ -58,11 +58,11 @@ double Polygon::square() const{
         if (type == HEXAGON) {
             Hexagon* h_ptr = static_cast<Hexagon*>(real_implementation);
             return (h_ptr->*h_function_pointer)();
-        };
+        }
         if (type == PENTAGON) {
             Pentagon* p_ptr = static_cast<Pentagon*>(real_implementation);
             return (p_ptr->*p_function_pointer)();
-        };
+        }
 
         std::cout << "complex alghoritm" << std::endl;
         return 0;

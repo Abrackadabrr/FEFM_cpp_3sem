@@ -2,9 +2,7 @@
 #include <vector>
 
 struct Polygon {
-    // ключевое слово virtual показывает, что эта функция может быть перегружена 
-    // в классах-наследниках 
-    double square() {
+    virtual double square() {
         std::cout << "complex alghoritm" << std::endl;
         return 0;
     }
@@ -12,11 +10,6 @@ struct Polygon {
 
 struct Hexagon : public Polygon {
     const static int number_of_vertex = 6;
-
-    double square() {
-        std::cout << "simple for hex" << std::endl;
-        return 0;
-    }
 };
 
 struct Pentagon : public Polygon {

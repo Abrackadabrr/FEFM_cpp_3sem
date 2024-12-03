@@ -18,10 +18,11 @@ public:
 
 int main() {
 	// создал объект
-	T a{};
-	int *public_pointer = (int *)(&a);
+	T t_class{};
+	t_class.a = 10; 
+	int *public_pointer = (int *)(&t_class);
 	public_pointer[0] = 10;
-	std::cout << a.getA() << std::endl;
+	std::cout << t_class.getA() << std::endl;
 }
 
 

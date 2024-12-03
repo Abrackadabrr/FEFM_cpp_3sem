@@ -7,7 +7,7 @@
 struct Base1 {
     int a;
     Base1(int a_): a(a_) {}; 
-    //virtual std::string name() {return " ";}
+    virtual ~Base1() {}
 };
 
 struct Derived1 : virtual Base1 {
@@ -30,5 +30,5 @@ int main() {
     Derived* derived_p = new Derived{1};
 
     Base1* base_1 = derived_p;  // сработает!
-    // derived_p = dynamic_cast<Derived*>(base_1);  // тоже сработает?
+    derived_p = dynamic_cast<Derived*>(base_1);  // тоже сработает?
 }

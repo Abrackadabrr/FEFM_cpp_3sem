@@ -1,7 +1,6 @@
 #include <iostream>
 
 // У инициализации также есть специальная семантика --- это пользовательское преобразование
-// Ключевое слово explicit блокирует неявное преобразование 
 
 struct MyString {
 	char *buf_; int len_;
@@ -14,10 +13,16 @@ struct MyString {
 	MyString(const MyString & rhs) = delete;
 	MyString& operator=(const MyString & rhs) = delete;
 
+// а как проеобразовать в фундаменьтальный тип, если я не могу дописать ему конструктор?
+// ответ: нужно переопределить соотвествующий оператор
 	operator const char *() {
 		std::cout << "Optor myString -> const char *" << std::endl;
 		return buf_;
 	}
+	
+	operator int() {
+		return 0;
+	} 
 };
 
 void foo(MyString s) {

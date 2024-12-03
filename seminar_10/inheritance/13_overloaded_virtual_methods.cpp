@@ -13,10 +13,6 @@ struct Matrix {
 };
 
 struct DiagonalMatrix: public Matrix {
-    Matrix pow(int degree) override {
-        std::cout << "simple for diag matrix" << std::endl;
-        return Matrix{};
-    }
 };
 
 int main() {

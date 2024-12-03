@@ -16,7 +16,6 @@ class Matrix {
 
         }
         return mas;
-
     }
 
 public: 

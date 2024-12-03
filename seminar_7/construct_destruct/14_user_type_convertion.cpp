@@ -4,8 +4,8 @@
 // 
 
 struct MyString {
-	char *buf_; size_t len_;
-	MyString(size_t len) : buf_{new char[len]{}}, len_{len} {
+	char *buf_; int len_;
+	MyString(int len) : buf_{new char[len]{}}, len_{len} {
 		std::cout << "Ctor" << std::endl;
 	}
 	~MyString() {

@@ -22,6 +22,7 @@ public:
     // Оператор присваивания
     // Допустим мы забыли проверить на присваивание самому себе
 	ScopedPointer& operator=(const ScopedPointer& rhs) {
+		if (this != &rhs) return *this;
 		// сделаем вывод на экран указателя, который у нас сейчас есть
         std::cout << ptr_ << std::endl;
 		delete ptr_;

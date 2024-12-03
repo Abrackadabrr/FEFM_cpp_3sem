@@ -1,0 +1,7 @@
+Implicit conversions are performed whenever an expression of some type T1 is used in context that does not accept that type, but accepts some other type T2; in particular:
+
+1)    when the expression is used as the argument when calling a function that is declared with T2 as parameter;
+2)    when the expression is used as an operand with an operator that expects T2;
+3)    when initializing a new object of type T2, including return statement in a function returning T2;
+4)    when the expression is used in a switch statement (T2 is integral type);
+5)    when the expression is used in an if statement or a loop (T2 is bool). 

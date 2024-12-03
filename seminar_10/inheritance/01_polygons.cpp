@@ -16,6 +16,8 @@ struct Polygon {
 
     Vector3d getNormal();
 
+    // 
+
     // ... ect ... //
 };
 
@@ -38,7 +40,7 @@ struct Pentagon : public Polygon {
 
     double square();
 
-    Pentagon(): Polygon(), number_of_vertex(6) {}
+    Pentagon(): Polygon(), number_of_vertex(5) {}
 };
 
 // обратите внимание на порядок вызовов конструкторов: 

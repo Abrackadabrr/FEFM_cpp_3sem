@@ -1,9 +1,10 @@
 #include <iostream>
 #include <cassert>
+#include <unistd.h>
 
 class CCopyableBuffer {
 public:
-	CCopyableBuffer(int size) : m_size (size), m_buffer (new char[size]) {
+	CCopyableBuffer(int size) : m_size (size), m_buffer (new int[size]) {
 		std::cout << "Ctor" << std::endl;
 	}
 
@@ -15,7 +16,7 @@ public:
 	//  нетривиальный конструктор копирования
 	CCopyableBuffer(const CCopyableBuffer& rhs) {
 		m_size = rhs.m_size;
-		m_buffer = new char[m_size];
+		m_buffer = new int[m_size];
 		std::copy(m_buffer, m_buffer + m_size, rhs.m_buffer);
 		
 		std::cout << "Copy Ctor" << std::endl;
@@ -23,23 +24,21 @@ public:
 
 	CCopyableBuffer& operator=(const CCopyableBuffer & rhs) {
 		m_size = rhs.m_size;
+		std::cout << m_buffer << ' ' << rhs.m_buffer << std::endl;
 		// освободили свою память
 		delete [] m_buffer;
-		m_buffer = new char[m_size];
-		std::copy(m_buffer, m_buffer + m_size, rhs.m_buffer);
-		
+		sleep(1);
+		m_buffer = new int[m_size];
+		std::cout << m_buffer << std::endl;
+		for (int i = 0; i < m_size; i++) { 
+			m_buffer[i] = rhs.m_buffer[i];
+		}
 		std::cout << "Assign optor" << std::endl;
 		
 		return *this;
 	}
-
-	char &get(int x) {
-		assert(x >= 0 && x < m_size);
-		return m_buffer[x];
-	}
-
 private:
-	char *m_buffer;
+	int *m_buffer;
 	int m_size;
 };
 
@@ -53,9 +52,8 @@ void wrong() {
 
 int main() {
 	wrong();
-	CCopyableBuffer a{10};
-	CCopyableBuffer c(a);
-	c = a;
+	CCopyableBuffer a{1000000000};
+	a = a;
 	return 0;
 }
 
