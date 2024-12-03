@@ -1,7 +1,5 @@
-// Стоит задача написать функции сравнения для переменных 
-// нескольких типов данных
-// Для решения этой задачи мы пользумемся механизмом 
-// перегрузки и с радостью пишем по одной функции на каждый тип данных
+// Стоит задача написать функции сравнения для переменных нескольких типов данных
+// Для решения этой задачи мы пользумемся механизмом перегрузки и с радостью пишем по одной функции на каждый тип данных
 
 int max(int lhs, int rhs) {
     return lhs < rhs ? rhs : lhs;
@@ -10,6 +8,7 @@ int max(int lhs, int rhs) {
 float max(float lhs, float rhs) {
     return lhs < rhs ? rhs : lhs;
 };
+
 
 double max(double lhs, double rhs) {
     return lhs < rhs ? rhs : lhs;
@@ -20,10 +19,8 @@ double max(double lhs, double rhs) {
 
 // Можно решить эту проблему через void pointer, например, так
 
-// comparator -- указатель на функцию, принимающую два 
-// const void pointer'a и размер объекта в байтах
-void * max(const void * p1, const void * p2, int n, 
-int(*comparator)(const void *, const void *, int n)) {
+// comparator -- указатель на функцию, принимающую два const void pointer'a и размер объекта в байтах
+void * max(const void * p1, const void * p2, int n, int(*comparator)(const void *, const void *, int n)) {
     comparator(p1, p2, n) == 1 ? p1 : p2;
 }
 

@@ -10,14 +10,13 @@ public:
 };
 
 struct NodePublic {
-	int a; 
-	NodePublic* next;
-	
+	int a; char b;
+/*	
 	NodePublic() {
 		a = 10;
-		next = nullptr;
+		b = 20;
 	}	
-
+*/
 };
 
 // когда вы определяете приватные поля, то у структуры ломается её классическая "агрегатная" инициализация
@@ -28,5 +27,5 @@ int main() {
 	Node node1{0}; // direct init
 	Node node2 = 0; //  copy init 
 
-	NodePublic node3{1, nullptr};  // <-- сломается если раскоментировать конструктор
+	NodePublic node3{1, 2};  // <-- сломается если раскоментировать конструктор
 }

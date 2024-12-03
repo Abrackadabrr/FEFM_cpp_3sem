@@ -39,18 +39,18 @@ public:
 		return *this;
 	}
 
-    // ScopedPointer(ScopedPointer && rhs): ptr_(rhs.ptr_) {
-    //     rhs.ptr_ = nullptr;
-    //     std::cout << "Move Ctor without copy and allocation" << std::endl;
-    // }
+    ScopedPointer(ScopedPointer && rhs): ptr_(rhs.ptr_) {
+        rhs.ptr_ = nullptr;
+        std::cout << "Move Ctor without copy and allocation" << std::endl;
+    }
 
-    // ScopedPointer& operator=(ScopedPointer && rhs){
-    //     delete ptr_;
-    //     ptr_ = rhs.ptr_;
-    //     rhs.ptr_ = nullptr;
-    //     std::cout << "Move Assign without copy and allocation" << std::endl;
-    //     return *this;
-    // }
+    ScopedPointer& operator=(ScopedPointer && rhs){
+        delete ptr_;
+        ptr_ = rhs.ptr_;
+        rhs.ptr_ = nullptr;
+        std::cout << "Move Assign without copy and allocation" << std::endl;
+        return *this;
+    }
 };
 
 

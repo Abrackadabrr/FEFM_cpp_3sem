@@ -25,31 +25,25 @@ struct Derived : public Derived1, public Derived2 {
     Derived(int a): Base1{a}, Derived1{2 * a}, Derived2{3 * a}, d(a) {}
 };
 
-struct Derived3: public Derived1, public Derived2 {
-    int d;
-    Derived3(int a): Base1{a}, Derived1{2 * a}, Derived2{3 * a}, d(a) {}
-};
-
 int main() {
-    #if 0
     Derived* derived_p = new Derived{1};
 
-    Base1* base_1 = derived_p;  // сработает!
-    std::cout << "&Base1 = " << std::hex << base_1 << std::endl;
+//    Base1* base_1 = derived_p;  // сработает!
+//    std::cout << "&Base1 = " << std::hex << base_1 << std::endl;
 
 
-     derived_p = dynamic_cast<Derived*>(base_1);  // тоже сработает?
-     std::cout << "&Derived = " << std::hex << derived_p << std::endl;
+//     derived_p = dynamic_cast<Derived*>(base_1);  // тоже сработает?
+//     std::cout << "&Derived = " << std::hex << derived_p << std::endl;
     
-     Derived1* derived_1_p = dynamic_cast<Derived1*>(base_1); // сработает?
-     std::cout << "&Derived1 = " << std::hex << derived_1_p << std::endl;
-     Derived2* derived_2_p = dynamic_cast<Derived2*>(derived_1_p); // сработает?
-     std::cout << "&Derived2 = " << std::hex << derived_2_p << std::endl;
-#endif
+//     Derived1* derived_1_p = dynamic_cast<Derived1*>(base_1); // сработает?
+//     std::cout << "&Derived1 = " << std::hex << derived_1_p << std::endl;
+//     Derived2* derived_2_p = dynamic_cast<Derived2*>(derived_1_p); // сработает?
+//     std::cout << "&Derived2 = " << std::hex << derived_2_p << std::endl;
+
 //     // а если вот так кастануть?
-     Derived3* derived_3_p = new Derived3{0};
-     Derived* derived__p = dynamic_cast<Derived*>(derived_3_p);  // срабоnает?
-     std::cout << "Strange adress = " << std::hex << derived__p << std::endl;
+//     Derived1* derived_1_p1 = new Derived1{0};
+//     derived_2_p = dynamic_cast<Derived2*>(derived_1_p1);  // срабоnает?
+//     std::cout << "Strange adress = " << std::hex << derived_2_p << std::endl;
 }
 
 // dynamic_cast может ходить по иерархии классов 

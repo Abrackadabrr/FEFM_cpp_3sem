@@ -39,7 +39,7 @@ struct Pentagon {
     PolygonBasePart base_part;
     const static int number_of_vertex = 5;
 
-    Pentagon(): base_part{std::vector<Point>{}, PolygonTypes::PENTAGON, this} {};
+    Pentagon(): base_part{std::vector<Point>{}, PolygonTypes::HEXAGON, this} {};
 };
 
 
@@ -60,7 +60,7 @@ int main() {
     // я могу узнать что это 
     std::cout << ptr_6->type << std::endl;
     // дальше я могу привести тип к необходимому мне и работать с этой фигурой как захочу
-    const Pentagon* h_6 = static_cast<Pentagon*>(ptr_6->real_implementation);
+    const Hexagon* h_6 = static_cast<Hexagon*>(ptr_6->real_implementation);
 
     std::cout << h_6->number_of_vertex << std::endl;
 }

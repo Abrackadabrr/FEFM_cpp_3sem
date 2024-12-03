@@ -1,5 +1,3 @@
-#include <iostream>
-
 float foo(float a) {
 	return 0;
 }

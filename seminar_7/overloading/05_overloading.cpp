@@ -15,9 +15,9 @@
 
 #include <iostream>
 
-// #ifndef N0
-// int foo(int x) { return 0; } 
-// #endif
+#ifndef N0
+int foo(int x) { return 0; } 
+#endif
 
 #ifndef N1
 int foo(const int &x) { return 1; }

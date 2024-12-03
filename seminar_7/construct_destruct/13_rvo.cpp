@@ -3,8 +3,7 @@
 using std::cout;
 using std::endl;
 
-// у консруктора копирования есть специальная семантика -- он используется 
-// в RVO (Return Value Optimization)
+// у консруктора копирования есть специальная семантика -- он используется в RVO (Return Value Optimization)
 
 struct foo {
   foo() { cout << "Ctor" << endl; }

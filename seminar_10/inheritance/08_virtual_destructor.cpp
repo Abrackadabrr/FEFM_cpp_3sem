@@ -1,12 +1,11 @@
 #include <iostream>
 
-struct Animal{
+struct Animal {
     // some fields
     Animal() {
         // some stuff
         std::cout << "Animal Ctor" << std::endl;
     }
-    
     ~Animal() {
         // some stuff
         std::cout << "Animal Dtor" << std::endl;
@@ -38,13 +37,11 @@ struct Cat: public Animal {
 };
 
 struct CrazyDog: public Dog {
-    int* ptr_;
-    CrazyDog(): ptr_(new int[10]) {
+    CrazyDog() {
         // some stuff
         std::cout << "CrazyDog Ctor" << std::endl;
     }
     ~CrazyDog() {
-        delete [] ptr_;
         // some stuff
         std::cout << "CrazyDog Dtor" << std::endl;
     }

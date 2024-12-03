@@ -24,10 +24,6 @@ struct Pentagon {
     Pentagon(): base_part{std::vector<Point>{}, PolygonTypes::PENTAGON, this} {};
 };
 
-int get_number_of_vertex(PolygonBasePart* base) {
-    return base->square();
-}
-
 int main() {
     std::vector<PolygonBasePart*> flat_figures;
     flat_figures.reserve(10);

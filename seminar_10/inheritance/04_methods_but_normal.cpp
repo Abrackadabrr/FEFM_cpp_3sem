@@ -8,9 +8,6 @@ struct Polygon {
         std::cout << "complex alghoritm" << std::endl;
         return 0;
     }
-    virtual double perimeter() {
-        return 0;
-    }
 };
 
 struct Hexagon : public Polygon {

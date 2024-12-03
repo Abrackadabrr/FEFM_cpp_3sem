@@ -24,11 +24,10 @@ public:
 		ptr_ = new MyClass{*rhs.ptr_};
 		return *this;
 	}
-	
 // оператор разыменовыния
          MyClass& operator*() const {
                   return *ptr_;
-         }
+          }
   
 // оператор стрелочки
 	MyClass* operator->() {return ptr_;};

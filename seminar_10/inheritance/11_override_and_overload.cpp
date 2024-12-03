@@ -11,11 +11,6 @@ struct Matrix {
 };
 
 struct DiagonalMatrix : public Matrix {
-    Matrix pow(int degree) override {
-        std::cout << "simple alghoritm" << std::endl;
-        return Matrix{};
-    }
-
     Matrix pow(long degree) {
         std::cout << "simple alghoritm" << std::endl;
         return Matrix{};
@@ -29,5 +24,5 @@ struct DiagonalMatrix : public Matrix {
 
 int main() {
     Matrix* m_ptr = new DiagonalMatrix{};
-    m_ptr->pow(3l);
+    m_ptr->pow(3);
 }

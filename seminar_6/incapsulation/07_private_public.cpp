@@ -1,5 +1,3 @@
-#include <iostream>
-
 struct stack {
 private:
 	int size;
@@ -24,9 +22,4 @@ public:
 		delete[] a;
 		std::cout << "Dtor" << std::endl;
 	}
-}
-
-int main() {
-	stack s{100};
-	s.top = -1;
 }
