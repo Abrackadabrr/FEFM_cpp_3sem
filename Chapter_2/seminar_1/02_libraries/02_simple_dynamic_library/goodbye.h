@@ -1,0 +1,1 @@
+void goodbye(int n);

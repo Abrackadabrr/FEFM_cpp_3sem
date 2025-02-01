@@ -1,0 +1,1 @@
+void anatoly(int n);

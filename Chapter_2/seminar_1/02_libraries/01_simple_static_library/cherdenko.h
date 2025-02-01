@@ -1,0 +1,1 @@
+void cherdenko(int n);
