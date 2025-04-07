@@ -24,7 +24,7 @@ int main() {
     ht table{};
     table.insert({"Alice", 10});
     table.insert({"Wayne", 894});
-    table.insert({"Alex", 892});
+    table.insert({"Alex", 894});
 
     std::cout << table.load_factor() << std::endl;
     std::cout << table.size() << std::endl;

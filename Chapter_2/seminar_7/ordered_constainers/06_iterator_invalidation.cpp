@@ -16,7 +16,7 @@ int main() {
     // Хотим удалить элемент по значению
     for (auto it = m.begin(); it != m.end(); ++it) {
         if (it->second == 1)
-            m.erase(it);
+            it = m.erase(it);
     }
     print_map(m);
 }
